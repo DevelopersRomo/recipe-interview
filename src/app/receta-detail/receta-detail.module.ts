@@ -1,19 +1,16 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { IonicModule } from '@ionic/angular';
 
+import { RecetaDetailRoutingModule } from './receta-detail-routing.module';
 import { RecetaDetailComponent } from './receta-detail.component';
 
-
-const routes = [
-  {
-    path: 'receta/:id',
-    component: RecetaDetailComponent
-  }
-];
-
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule],
+  declarations: [RecetaDetailComponent],
+  imports: [
+    CommonModule,
+    IonicModule,
+    RecetaDetailRoutingModule
+  ]
 })
-
-export class RecetaDetailRoutingModule {}
+export class RecetaDetailModule {}

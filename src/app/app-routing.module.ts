@@ -11,10 +11,11 @@ const routes: Routes = [
     path: 'folder/:id',
     loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
   }, 
-  {
-    path: 'receta/:id',
-    loadChildren: () => import('./receta-detail/receta-detail.module').then( m => m.RecetaDetailRoutingModule)
-  },
+  
+    {
+      path: 'receta/:id',
+      loadComponent: () => import('./receta-detail/receta-detail.component').then(m => m.RecetaDetailComponent)
+    },
 ];
 
 @NgModule({
