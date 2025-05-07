@@ -7,12 +7,12 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./folder.page.scss'],
   standalone: false,
 })
-export class FolderPage implements OnInit {
+export class FolderPage implements OnInit  {
   public router = inject(Router);
   public folder!: string;
   public recetas: any[] = [];
   private activatedRoute = inject(ActivatedRoute);
-  constructor(router: Router) {
+  constructor() {
    
    
   }
@@ -31,7 +31,6 @@ export class FolderPage implements OnInit {
   }
 
   goDetail(id: number) {
-    console.log('Receta ID:', id);
     this.router.navigate(['receta', id]);
   }
 

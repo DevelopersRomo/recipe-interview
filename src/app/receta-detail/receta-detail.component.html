@@ -1,3 +1,31 @@
-<p>
-  receta-detail works!
-</p>
+<!--menu back-->
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/recetas"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Receta Detail</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+  <!--receta detail title, Image, description-->
+  <ion-content>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>{{ receta.title }}</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <img [src]="receta.image" alt="{{ receta.title }}" class="img-fluid" />
+        <p>{{ receta.description }}</p>
+      </ion-card-content>
+    </ion-card>
+
+    <!--receta detail ingredients-->
+    <ion-list>
+      <ion-item *ngFor="let ingredient of receta.ingredients">
+        {{ ingredient }}
+      </ion-item>
+    </ion-list>
+  </ion-content>

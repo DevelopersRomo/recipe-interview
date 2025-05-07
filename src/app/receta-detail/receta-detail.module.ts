@@ -3,10 +3,9 @@ import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 
 import { RecetaDetailRoutingModule } from './receta-detail-routing.module';
-import { RecetaDetailComponent } from './receta-detail.component';
 
 @NgModule({
-  declarations: [RecetaDetailComponent],
+  declarations: [],
   imports: [
     CommonModule,
     IonicModule,
