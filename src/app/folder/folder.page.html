@@ -15,35 +15,37 @@
   </ion-header>
 
   <div id="container">
- 
+
+    <!-- 🔍 Search bar -->
+    <ion-searchbar 
+      placeholder="Buscar receta..."
+      (ionInput)="onSearchChange($event)">
+    </ion-searchbar>
+
     <ion-card>
       <ion-card-header>
         <ion-card-title>Receta</ion-card-title>
       </ion-card-header>
 
       <ion-card-content>
-       Here is a small description of the recipe. It can be a few lines long and should give the user an idea of what to expect from the recipe.
+        Aquí hay una pequeña descripción de la receta. Puede tener unas pocas líneas y debería dar una idea de qué esperar.
       </ion-card-content>
     </ion-card>
-     
+
     <ion-list>
       <ion-item *ngFor="let item of recetas">
-     
         <ion-label>
           <h2>{{ item.title }}</h2>
           <p>{{ item.description }}</p>
         </ion-label>
         <ion-button 
-        slot="end"
-        fill="outline"
-        color="primary"
-        (click)="goDetail(item.id)"
-        >Ver</ion-button>
+          slot="end"
+          fill="outline"
+          color="primary"
+          (click)="goDetail(item.id)">
+          Ver
+        </ion-button>
       </ion-item>
-
- 
-
     </ion-list>
   </div>
-  
 </ion-content>

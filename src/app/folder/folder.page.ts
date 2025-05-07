@@ -22,6 +22,13 @@ export class FolderPage implements OnInit {
     this.recetas = this.getRecetas();
   }
 
+  onSearchChange(event: any) {
+    const query = event.target.value.toLowerCase();
+    this.recetas = this.recetas.filter(item =>
+      item.title.toLowerCase().includes(query) ||
+      item.description.toLowerCase().includes(query)
+    );
+  }
 
   goDetail(id: number) {
     console.log('Receta ID:', id);
